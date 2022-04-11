@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>보행자 맞춤형 길찾기 서비스</title>
+    <meta name="description" content="보행자 맞춤형 길찾기 서비스" />
+    <meta name="keywords" content="길찾기, 길안내" />
+    <meta name="author" content="GYURI PARK" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, 
+    maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="보행자 맞춤형 길찾기 서비스" />
+    <meta property="og:description" content="쾌적성과 안전성 기반의 길안내" />
+    <meta property="og:image" content="미리보기 이미지" />  <!--나중에 입력!!!!-->
+    <meta property="og:url" content="홈페이지url" /> <!--나중에 입력!!!!-->
+    <meta property="og:site_name" content="UOS_2022_졸업작품" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="보행자 맞춤형 길찾기 서비스" />
+    <meta name="twitter:description" content="쾌적성과 안전성 기반의 길안내" />
+    <meta name="twitter:image" content="미리보기 이미지" />  <!--나중에 입력!!!!-->
+    <meta name="twitter:url" content="홈페이지url" /> <!--나중에 입력!!!!-->
+    <meta name="twitter:creator" content="GYURI PARK" />
+
+    <link rel="icon" href="img/homepage_icon/854929.png" />
+    <link rel="apple-touch-icon" href="img/homepage_icon/854929.png" />
+    <link rel="short icon" type="image/x-icon" href="img/homepage_icon/854929.png" />
+
+    <link rel="stylesheet" href="css/nomalize.css" />
+    <script src="https://use.fontawesome.com/515dfa2def.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="inner">
+        <div class="head-container">
+            <div class="head-menu"> <a href = "https://uos-urbanscience.org/search-portfolio">
+              <img src="img/body_header/menu.png" alt = "menu bar" height="30px"></a></div>
+            <div class="head-appname"><a href = "https://uos-urbanscience.org/search-portfolio">오늘은 다른길로 가겠습니다</a></div>
+            <div class="head-portfolio"> <a href = "https://uos-urbanscience.org/search-portfolio">
+              <img src ="img/body_header/uos.png" alt = "uos 앰블럼" height="30px">
+            </a></div>
+        </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="inner">
+      <div class="loca-container">
+        <div class="arrow">
+        <i class="fa-solid fa-arrow-up-arrow-down switch-mark"></i></div>
+        <div class="choice-container">
+          <div class="start-container">
+            <div class="start-title"> 출발지 : </div>
+            <div class="start-point"> 현재 위치 입력하기 </div>
+            <div class="xmark"><i class="fa-light fa-circle-xmark"></i></div>
+          </div>
+          <div class="end-container">
+            <div class="end-title"> 도착지 : </div>
+            <div class="end-point"></div>
+            <div class="xmark"><i class="fa-light fa-circle-xmark"></i></div>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </section>
+
+  <section>
+    <div class="title-container">
+      지도에서 선택하기
+    </div>
+  </section>
+
+  <section> 
+    <div class="map-container">
+    </div>
+  </section>
+
+
+
+<!--
+  <footer>
+    <div class="inner">
+        <div class="footer-copyright">Copyright 2022 © All rights reserved.</div>      
+    </div>
+  </footer>
+-->
+  <a id="backtotop" class="show"></a>
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	7deddde33d25b480204f267a6f10971c"></script> 
+  <script src="js/main.js"></script>  
+</body>
+</html>
