@@ -13,16 +13,16 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="보행자 맞춤형 길찾기 서비스" />
     <meta property="og:description" content="쾌적성과 안전성 기반의 길안내" />
-    <meta property="og:image" content="미리보기 이미지" />  <!--나중에 입력!!!!-->
+    <meta property="og:image" content="미리보기 이미지" /> <!--나중에 입력 -->
     <meta property="og:url" content="홈페이지url" /> <!--나중에 입력!!!!-->
     <meta property="og:site_name" content="UOS_2022_졸업작품" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="보행자 맞춤형 길찾기 서비스" />
     <meta name="twitter:description" content="쾌적성과 안전성 기반의 길안내" />
-    <meta name="twitter:image" content="미리보기 이미지" />  <!--나중에 입력!!!!-->
+    <meta name="twitter:image" content="미리보기 이미지" />  <!--나중에 입력!!!!-->   
     <meta name="twitter:url" content="홈페이지url" /> <!--나중에 입력!!!!-->
-    <meta name="twitter:creator" content="GYURI PARK" />
+    <meta name="twitter:creator" content="GYURI PARK" /> 
 
     <link rel="icon" href="img/homepage_icon/854929.png" />
     <link rel="apple-touch-icon" href="img/homepage_icon/854929.png" />
@@ -38,9 +38,9 @@
         <div class="head-container">
             <div class="head-menu"> <a href = "https://uos-urbanscience.org/search-portfolio">
               <img src="img/body_header/menu.png" alt = "menu bar" height="30px"></a></div>
-            <div class="head-appname"><a href = "https://uos-urbanscience.org/search-portfolio">오늘은 다른길로 가겠습니다</a></div>
+            <div class="head-appname"><a href = "https://uos-urbanscience.org/search-portfolio"> 오늘은 다른 길로 가겠습니다 </a></div>
             <div class="head-portfolio"> <a href = "https://uos-urbanscience.org/search-portfolio">
-              <img src ="img/body_header/uos.png" alt = "uos 앰블럼" height="30px">
+              <i class="fa-solid fa-globe globe"></i>
             </a></div>
         </div>
     </div>
@@ -54,12 +54,12 @@
         <div class="choice-container">
           <div class="start-container">
             <div class="start-title"> 출발지 : </div>
-            <div class="start-point"> 현재 위치 입력하기 </div>
+            <div class="start-point"> &nbsp; 출발 장소 입력하기 </div>
             <div class="xmark"><i class="fa-light fa-circle-xmark"></i></div>
           </div>
           <div class="end-container">
             <div class="end-title"> 도착지 : </div>
-            <div class="end-point"></div>
+            <div class="end-point"> &nbsp;  도착 장소 입력하기 </div>
             <div class="xmark"><i class="fa-light fa-circle-xmark"></i></div>
           </div>
         </div>
@@ -67,18 +67,87 @@
     </div>
   </section>
 
+
   <section>
     <div class="title-container">
       지도에서 선택하기
     </div>
   </section>
 
-  <section> 
-    <div class="map-container">
+
+  <section>
+    <div id ="map" style="width:100%; height:350px;">
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=7deddde33d25b480204f267a6f10971c"></script>
+    <script>
+      var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+      mapOption = { 
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        level: 10 // 지도의 확대 레벨 
+      }; 
+      var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+/*
+      var lat;
+      var lon;
+      var options = {
+        enableHighAccuracy : true,
+        timeout : 5000,   
+        maximumAge : 0
+      };
+
+      function success(position){
+        console.log(position);
+        lat = position.coords.latitude //위도
+        lon = position.coords.longitude //경도
+
+        var locPosition = new kakao.maps.LatLng(lat, lon)
+        message = '<div style ="padding:5px;"> 현재 위치가 맞나요?</div>'
+
+        displayMarker(locPosition, message);
+      };
+
+      function error(err) {
+        console.log(err);
+      };
+
+// HTML5의 geolocation으로 사용할 수 있는지 확인합니다 
+      if (navigator.geolocation) {
+        alert('위치 정보 확인')
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var lat = position.coords.latitude, // 위도
+              lon = position.coords.longitude; // 경도
+        
+          var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+                  message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
+        
+          // 마커와 인포윈도우를 표시합니다
+          displayMarker(locPosition, message);
+            
+        });
+      } else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우 내용을 설정합니다
+          var locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
+          message = 'geolocation을 사용할수 없어요..'
+        
+          displayMarker(locPosition, message);
+        }
+
+      function displayMarker(locPosition, message) {
+        console.log(1);
+        if(flag){
+          marker.setMap(null);
+        }
+
+        marker = new kakao.maps.Marker({  
+          position: locPosition
+        });
+        marker.setMap(map);
+        flag = true;
+
+        marker.setCenter(locPosition);
+      }
+*/
+    </script>
     </div>
-  </section>
-
-
+  </section> 
 
 <!--
   <footer>
