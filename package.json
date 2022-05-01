@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "graduation project code",
+  "description": "graduation project code ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/GYURI-PARK/2022_Graduation_project.git"
   },
-  "author": "GYURI-PARK",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GYURI-PARK/2022_Graduation_project/issues"
   },
-  "homepage": "https://github.com/GYURI-PARK/2022_Graduation_project#readme"
+  "homepage": "https://github.com/GYURI-PARK/2022_Graduation_project#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "pg": "^8.7.3"
+  }
 }

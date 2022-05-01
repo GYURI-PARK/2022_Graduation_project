@@ -226,12 +226,12 @@ section {
 #backtotop.show {  
   opacity: 1;
   visibility: visible;
-  background-color: #c8c8c8;
+  background-color: grey;
 }
 
 #backtotop.show:hover{
   cursor:pointer;
-  background-color:rgb(246, 255, 196);
+  background-color: #4FB86E;
 }
 
 /*===================================================================================*/
