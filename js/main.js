@@ -1,11 +1,3 @@
-
-const resultMap = document.querySelector('.result-map')
-
-const map = new kakao.maps.Map(resultMap, {
-    center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
-	level: 5
-})
-
 const backToTop = document.getElementById('backtotop');
 
 function checkScroll(){
