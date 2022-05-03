@@ -12,8 +12,9 @@ app.listen(3000, function() {
 // request, response 인자를 사용해 콜백 함수를 만든다.
 // localhost:3000 브라우저에 res.send() 내부의 문자열이 띄워진다.
 
-app.get('/', function(req,res) {
+app.get('/test', function(req,res) {
   // res.send("<h1>hi friend!</h1>")
+  console.log('hello!');
   res.sendFile(__dirname + "/index.html")
 })
 

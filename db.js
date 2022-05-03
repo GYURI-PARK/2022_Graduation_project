@@ -2,10 +2,10 @@ const { Client } = require("pg");
 const Query = require('pg').Query
 
 var client = new Client({ 
-  user : 'user name', 
-  host : 'host name', 
+  user : 'postgres', 
+  host : 'localhost', 
   database : 'postgres', 
-  password : 'password', 
+  password : '1234', 
   port : 5432, 
 })
 
@@ -17,7 +17,7 @@ client.connect(err => {
     console.log('Success:)') 
   } 
 })
-
+/*
 router.get('/read', function(req, res, next) { 
   const query = new Query("SELECT * FROM users") 
   client.query(query) 
@@ -43,4 +43,4 @@ router.get('/read', function(req, res, next) {
   }); 
 });
   
-
+*/
