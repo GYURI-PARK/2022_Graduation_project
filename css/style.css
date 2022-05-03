@@ -2,17 +2,19 @@
   box-sizing: border-box;
 }
 
+/*
 @font-face {
   font-family: 'GongGothicMedium';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
+*/
+
 
 body { 
   margin: 0 auto;
   color: black;
-  
 }
 
 
@@ -68,13 +70,15 @@ header{
 }
 
 .head-appname{
-
+  font-weight: bolder;
 }
 
+/*
 .head-menu {
   font-size: 2rem;
   padding: 0.7rem;
 }
+*/
 
 section {
   width: 100%;
@@ -86,8 +90,9 @@ section {
   margin-top: 3rem;
   width: 100%;
   height: 100%;
-  display: flex;
+  display: inline-flex;
   padding: 1rem;
+  align-items: center;
   
 }
 
@@ -96,6 +101,7 @@ section {
   font-size: 2rem;
 }
 
+/*
 #switch-mark::after {
   content: "\e099";
   font-family: FontAwesome;
@@ -108,12 +114,12 @@ section {
   visibility: visible;
   background-color: #fff;
 }
+*/
 
+/*
 .arrow{
-  justify-content: center;
-  font-size: 100px;
 
-}
+} */
 
 .title-container{
   padding: 1rem 0.8rem;
@@ -123,17 +129,25 @@ section {
   justify-content: space-between;
 }
 
+.start-title{
+  font-weight: bold;
+}
+
+.end-title{
+  font-weight: bold;
+}
+
 .start-container{
   width: 100%;
   height: 50px;
   display: flex;
-  background-color: #73e695;
+  background-color: #C6EBC9;
   align-items: center;
-  border-radius: 9px;
+  border-radius: 25px;
   padding: 0.5rem 1rem;
   margin: 0 1rem;
   margin-bottom: 0.6rem;
-  box-shadow: 10px 10px 10px -5px rgba(206, 210, 216, 0.2);
+  box-shadow: 10px 10px 10px 5px rgba(206, 210, 216, 0.2);
   transition: 0.4s;
   justify-content: space-between;
 
@@ -143,45 +157,59 @@ section {
   width: 100%;
   height: 50px;
   display: flex;
-  background-color: #60d683;
+  background-color: #C6EBC9;
   align-items: center;
-  border-radius: 9px;
+  border-radius: 25px;
   padding: 0.5rem 1rem;
   margin: 0 1rem;
   margin-top: 0.6rem;
-  box-shadow: 10px 10px 10px -5px rgba(206, 210, 216, 0.2);
-  transition: 0.4s;
+  box-shadow: 10px 10px 10px 5px rgba(206, 210, 216, 0.2);
+  /* transition: 0.4s; */
   justify-content: space-between;
 
 }
 
+.button-container{
+  padding: 2rem 2rem 0.5rem 2rem;
+  justify-content: space-around;
+}
 
 
 .now-location{
-  background-color: #4FB86E;
-  border-radius: 18px;
+  background-color: #C6EBC9;
+  border-radius: 25px;
   display: flex;
-  height: 50px;
-  padding-bottom: 2rem;
+  height: 40px;
   align-items: center;
+  margin-bottom: 0.6rem;
+  justify-content: flex-start;
 }
 
+.nowloca-icon{
+  margin : 0 2rem;
+}
 .nowloca-mess{
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .findpath-icon{
+  margin: 0 2rem;
 }
 
 .find-path{
-  background-color: #4FB86E;
-  border-radius: 18px;
+  background-color: #C6EBC9;
+  border-radius: 25px;
   display: flex;
-  height: 50px;
+  height: 40px;
+  margin-top: 0.6rem;
   align-items: center;
 
 }
 
 .findpath-mess{
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .footer-container{
@@ -194,6 +222,12 @@ section {
   margin-top: 3rem;
   position: fixed; /*하단에 고정*/
   bottom: 0;
+  z-index: 100;
+}
+
+.map{
+  padding : 2rem 0;
+  height: 400px;
 }
 
 /*===================================================================================*/
@@ -226,12 +260,12 @@ section {
 #backtotop.show {  
   opacity: 1;
   visibility: visible;
-  background-color: grey;
+  background-color: rgb(178, 173, 173);
 }
 
 #backtotop.show:hover{
   cursor:pointer;
-  background-color: #4FB86E;
+  background-color: #C6EBC9;
 }
 
 /*===================================================================================*/
