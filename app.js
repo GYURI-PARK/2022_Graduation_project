@@ -16,6 +16,13 @@ app.get('/', function(req,res) {
   // res.send("<h1>hi friend!</h1>")
   console.log('hello!');
   res.sendFile(__dirname + "/index.html")
+});
+
+app.get("/tree", function(req, res) {
+  console.log(req.query.startLat);
+  console.log(req.query.startLng);
+  console.log(req.query.endLat);
+  console.log(req.query.endLng);
 })
 
 
