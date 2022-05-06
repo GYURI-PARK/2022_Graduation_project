@@ -80,11 +80,12 @@
   <section>
     <div class="map">
       <div id="map" style="width:100%; height:400px;"></div>
-      <script type="text/javascript"
-        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7deddde33d25b480204f267a6f10971c&libraries=services"></script>
+      <script type="text/javascript" 
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7deddde33d25b480204f267a6f10971c&libraries=services"></script>
       <div id="clickLatlng"></div>
       <script>
-        if ('geolocation' in navigator) {
+        // 'geolocation' in navigator
+        if (1==0) {
           alert("실시간 위치 정보 기능 사용 가능!");
         } else {
           alert("실시간 위치 정보 기능 사용 불가능!");
@@ -174,35 +175,16 @@
           startLat = markers[0].getPosition().getLat();
           startLng = markers[0].getPosition().getLng();
 
-          endLat = markers[0].getPosition().getLat();
-          endLng = markers[0].getPosition().getLng();
+          endLat = markers[1].getPosition().getLat();
+          endLng = markers[1].getPosition().getLng();
 
           const option = "gvi";
 
-          var url = "http://localhost:3000/tree";
-          // var url = "http://127.0.0.1:5501/tree.html";
-          var params = "?startLat="+startLat+"&startLng="+startLng+"&endLat="+endLat+"&endLng="+endLng+"&option"+option;
+          var url = "http://localhost:3300/tree";
+          var params = "?startLat="+startLat+"&startLng="+startLng+"&endLat="+endLat+"&endLng="+endLng+"&option="+option;
           reqUrl = url+params;
           console.log(reqUrl);
 
-          // URLSearchParams interface
-          const queryString = window.location.search;
-          // console.log(queryString);
-          const urlParams = new URLSearchParams(queryString);
-
-          const start_Lat = urlParams.get('startLat');
-          console.log(startLat);
-          
-          const start_Lng = urlParams.get('startLng');
-          console.log(startLng);
-
-          const end_Lat = urlParams.get('endLat');
-          console.log(endLat);
-          
-          const end_Lng = urlParams.get('endLng');
-          console.log(endLng);
-
-          
 
 // ========================================================================
 

@@ -1,4 +1,3 @@
-const { Client } = require("pg");
 const Query = require('pg').Query;
 const pg = require('pg');
 
@@ -18,7 +17,7 @@ client.connect(err => {
   } else {
     console.log('Success:)');
 
-    const query = new Query("SELECT * FROM gvi limit 10")
+    const query = new Query("SELECT walk_node.node_id, walk_node.geom, walk_node.geom <-> 'SRID=4326;POINT(126.92336043981142 37.56509837507711)'::geometry AS dist FROM walk_node ORDER BY dist LIMIT 1;")
     client.query(query)
 
     var rows = [];
@@ -56,7 +55,48 @@ client.connect(err => {
 
 
 // =========================
-// const axios = require('axios');
-// const res = await axios.get('http://localhost:3000/tree');
+// const express = require('express');
+// const router = express();
+// const db = require('../');
+
+// router.get('/', (req,res) => {
+//   const sql = 'SELECT '
+// })
 
 
+
+
+ 
+// router.get('/BoardContent', (req,res) => {
+// 	// sql query 문
+//     const sql = 'SELECT idx, title, content, writer, write_date FROM `table1` WHERE `idx` = ?';
+//     // 전달받은 parameter 값
+//     const params = req.query.idx
+//     db.query(sql, params, (err, data) => {
+//         if(!err) {
+//             res.send(data)
+//         } else {
+//             res.send(err)
+//         }
+//     })
+// })
+ 
+// module.exports = router;
+
+
+//========================================================
+// CREATE the server and Client
+
+// const clinet = require('./app.js')
+// const express = require('express');
+// const app = express();
+
+// app.listen(3000, function() {
+//   console.log("start! express server on port 3000")
+// })
+
+// client.connect()
+
+// // BodyParser: This is used to handle conversion to and from json
+// const bodyParser = require("body-parser");
+// app.use(bodyParser.json());
