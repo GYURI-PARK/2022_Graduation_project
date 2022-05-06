@@ -177,12 +177,54 @@
           endLat = markers[0].getPosition().getLat();
           endLng = markers[0].getPosition().getLng();
 
+          const option = "gvi";
 
           var url = "http://localhost:3000/tree";
-          var params = "?startLat="+startLat+"&startLng="+startLng+"&endLat="+endLat+"&endLng="+endLng;
+          // var url = "http://127.0.0.1:5501/tree.html";
+          var params = "?startLat="+startLat+"&startLng="+startLng+"&endLat="+endLat+"&endLng="+endLng+"&option"+option;
           reqUrl = url+params;
           console.log(reqUrl);
 
+          // URLSearchParams interface
+          const queryString = window.location.search;
+          // console.log(queryString);
+          const urlParams = new URLSearchParams(queryString);
+
+          const start_Lat = urlParams.get('startLat');
+          console.log(startLat);
+          
+          const start_Lng = urlParams.get('startLng');
+          console.log(startLng);
+
+          const end_Lat = urlParams.get('endLat');
+          console.log(endLat);
+          
+          const end_Lng = urlParams.get('endLng');
+          console.log(endLng);
+
+          
+
+// ========================================================================
+
+        //  // 선을 구성하는 좌표 배열입니다. 이 좌표들을 이어서 선을 표시합니다
+        //   var linePath = [
+        //       new kakao.maps.LatLng(startLat, startLng),
+        //       new kakao.maps.LatLng(endLat,endLng)
+        //   ];
+
+        //   // 지도에 표시할 선을 생성합니다
+        //   var polyline = new kakao.maps.Polyline({
+        //       path: linePath, // 선을 구성하는 좌표배열 입니다
+        //       strokeWeight: 5, // 선의 두께 입니다
+        //       strokeColor: '#FFAE00', // 선의 색깔입니다
+        //       strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+        //       strokeStyle: 'solid' // 선의 스타일입니다
+        //   });
+
+        //   // 지도에 선을 표시합니다 
+        //   polyline.setMap(map);  
+            
+//======================================================================
           axios.get(reqUrl).then(function (result) {
             console.log("통신 결과 : ", result);
             console.log("status : ", result.status);
