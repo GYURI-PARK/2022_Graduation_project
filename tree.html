@@ -55,9 +55,166 @@
   </header>
 
   <section>
-    <div class="tree-map">
-      
-    </div>
+    <div class="map">
+      <div id="map" style="width:100%; height:400px;"></div>
+      <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7deddde33d25b480204f267a6f10971c&libraries=services"></script>
+      <div id="clickLatlng"></div>
+      <script>
+        // 'geolocation' in navigator
+        if (1 == 0) {
+          alert("실시간 위치 정보 기능 사용 가능!");
+        } else {
+          alert("실시간 위치 정보 기능 사용 불가능!");
+        }
+
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+          mapOption = {
+            center: new kakao.maps.LatLng(37.5644783, 126.9220027), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+          };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        var markers = [];
+        index = 0;
+        // 지도를 클릭한 위치에 표출할 마커입니다
+        var sMarker = new kakao.maps.Marker({
+          // 지도 중심좌표에 마커를 생성합니다 
+          position: map.getCenter()
+        });
+        var eMarker = new kakao.maps.Marker({
+          position: map.getCenter()
+        })
+        markers.push(sMarker);
+        markers.push(eMarker);
+
+        // 지도에 클릭 이벤트를 등록합니다
+        // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+        kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
+
+          // 클릭한 위도, 경도 정보를 가져옵니다 
+          var latlng = mouseEvent.latLng;
+          console.log("latlng -> ", latlng);
+          // 마커 위치를 클릭한 위치로 옮깁니다
+          if (index == 0) {
+            markers[0].setPosition(latlng);
+            markers[0].setMap(map);
+            index++;
+
+            //
+            // 주소-좌표 변환 객체를 생성합니다
+            var geocoder = new kakao.maps.services.Geocoder();
+            var coord = new kakao.maps.LatLng(latlng.getLat(), latlng.getLng());
+            var callback = function (result, status) {
+              if (status === kakao.maps.services.Status.OK) {
+                var loc = result[0].address.address_name;
+                document.getElementById('start_point').value = loc;
+              }
+            };
+            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+
+          }
+          else if (index == 1) {
+            markers[1].setPosition(latlng);
+            markers[1].setMap(map);
+            index++;
+            //
+            // 주소-좌표 변환 객체를 생성합니다
+            var geocoder = new kakao.maps.services.Geocoder();
+            var coord = new kakao.maps.LatLng(latlng.getLat(), latlng.getLng());
+            var callback = function (result, status) {
+              if (status === kakao.maps.services.Status.OK) {
+                var loc = result[0].address.address_name;
+                console.log(loc);
+                document.getElementById('end-point').value = loc;
+              }
+            };
+            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+          } else {
+            markers.forEach(marker => {
+              marker.setMap(null);
+            });
+            document.getElementById('start_point').value = "";
+            document.getElementById('end-point').value = "";
+            index = 0;
+          }
+
+        });
+
+        function geo() {
+          navigator.geolocation.getCurrentPosition((position) => {
+            var tmp = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            map.setCenter(tmp);
+          })
+        }
+        var polyline = new kakao.maps.Polyline({
+          path: [], // 선을 구성하는 좌표배열 입니다
+          strokeWeight: 5, // 선의 두께 입니다
+          strokeColor: '#FFAE00', // 선의 색깔입니다
+          strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+          strokeStyle: 'solid' // 선의 스타일입니다
+        });
+
+        function tree() {
+          var lines = [];
+          startLat = markers[0].getPosition().getLat();
+          startLng = markers[0].getPosition().getLng();
+
+          endLat = markers[1].getPosition().getLat();
+          endLng = markers[1].getPosition().getLng();
+
+
+          var url = "http://localhost:3300/tree";
+          var params = "?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+          reqUrl = url + params;
+          console.log(reqUrl);
+
+          axios.get(reqUrl).then(function (result) {
+            console.log(result);
+            result.data.map((item) => {
+              line = item["link_wtk"];
+              var spot1 = line.split("(")[1].split(")")[0].split(",")[0].split(" ");
+              var spot2 = line.split("(")[1].split(")")[0].split(",")[1].split(" ");
+              console.log("spot1 : ", spot1);
+              console.log("spot2 : ", spot2);
+
+              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]),
+                new kakao.maps.LatLng(spot2[1], spot2[0]));
+            });
+          }).catch(function (error) {
+            console.log("에러 발생 : ", error);
+          }).then(() => {
+            polyline = new kakao.maps.Polyline({
+              path: lines, // 선을 구성하는 좌표배열 입니다
+              strokeWeight: 5, // 선의 두께 입니다
+              strokeColor: '#FFAE00', // 선의 색깔입니다
+              strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+              strokeStyle: 'solid' // 선의 스타일입니다
+            });
+            polyline.setMap(map);
+          })
+        }
+      </script>
+  </section>
+
+  <section>
+    <div class="roadview">
+      <div id="roadview" style="width:100%;height:300px;"></div>
+      <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7deddde33d25b480204f267a6f10971c&libraries=services"></script>
+      <!-- 로드뷰를 표시할 div 입니다 -->
+      <script>
+        var roadviewContainer = document.getElementById('roadview'); //로드뷰를 표시할 div
+        var roadview = new kakao.maps.Roadview(roadviewContainer); //로드뷰 객체
+        var roadviewClient = new kakao.maps.RoadviewClient(); //좌표로부터 로드뷰 파노ID를 가져올 로드뷰 helper객체
+
+        var position = new kakao.maps.LatLng(33.450701, 126.570667);
+
+        // 특정 위치의 좌표와 가까운 로드뷰의 panoId를 추출하여 로드뷰를 띄운다.
+        roadviewClient.getNearestPanoId(position, 50, function (panoId) {
+          roadview.setPanoId(panoId, position); //panoId와 중심좌표를 통해 로드뷰 실행
+        });
+      </script>
   </section>
 
 

@@ -273,9 +273,11 @@ section {
   background-size: cover;
 }.quite-option {
   background-image: url("../img/background/quite.avif");
+  transform: translateY(20px);
   background-size: cover;
 }.safe-option {
   background-image: url("../img/background/safety.avif");
+  transform: translateY(20px);
   background-size: cover;
 }
 
