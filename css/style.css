@@ -197,6 +197,8 @@ section {
 }
 
 
+
+
 .bSection {
   margin: 30px auto;
 }
@@ -247,6 +249,60 @@ section {
   color: white;
 }
 
+#treeRoadView{
+  position: absolute;
+  color: white;
+  padding: 10px 20px;
+  top: 10px;
+  right: 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.6;
+  display: none;
+}
+
+
+#skyRoadView{
+  position: absolute;
+  color: white;
+  padding: 10px 20px;
+  top: 10px;
+  right: 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.6;
+  display: none;
+}
+#quiteRoadView{
+  position: absolute;
+  color: white;
+  padding: 10px 20px;
+  top: 10px;
+  right: 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.6;
+  display: none;
+}
+#safeRoadView{
+  position: absolute;
+  color: white;
+  padding: 10px 20px;
+  top: 10px;
+  right: 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.6;
+  display: none;
+}
+
+
+
+
 .box2{
   display: flex;
   width: 45%;
@@ -268,6 +324,7 @@ section {
   background-image: url("../img/background/tree.jpg");
   background-size: cover;
 }
+
 .sky-option {
   background-image: url("../img/background/sky.avif");
   background-size: cover;

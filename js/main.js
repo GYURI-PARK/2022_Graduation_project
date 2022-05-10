@@ -34,4 +34,3 @@ var position = new kakao.maps.LatLng(33.450701, 126.570667);
 roadviewClient.getNearestPanoId(position, 50, function(panoId) {
     roadview.setPanoId(panoId, position); //panoId와 중심좌표를 통해 로드뷰 실행
 });
-
