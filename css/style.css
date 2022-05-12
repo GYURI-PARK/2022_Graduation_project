@@ -12,34 +12,36 @@
 */
 
 
-body { 
+body {
   margin: 0 auto;
   color: black;
 }
+
 a {
   all: unset;
 }
-a:link{
+
+a:link {
   text-decoration: none;
   color: black;
 }
 
-a:visited{
+a:visited {
   text-decoration: none;
   color: black;
 }
 
-a:active{
+a:active {
   text-decoration: none;
   color: black;
 }
 
-a:hover{
+a:hover {
   text-decoration: none;
   color: black;
 }
 
-header{
+header {
   width: 100%;
   height: 50px;
   background-color: #ffffff;
@@ -58,7 +60,7 @@ input {
 }
 
 
-.inner{
+.inner {
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -75,11 +77,11 @@ input {
   align-items: center;
 }
 
-.head-appname{
+.head-appname {
   font-weight: bolder;
 }
 
-.start-container{
+.start-container {
   position: relative;
 }
 
@@ -96,17 +98,17 @@ section {
   position: relative;
 }
 
-.loca-container{
+.loca-container {
   margin-top: 3rem;
   width: 100%;
   height: 100%;
   display: inline-flex;
   padding: 1rem;
   align-items: center;
-  
+
 }
 
-.globe{
+.globe {
   padding: 0.7rem;
   font-size: 2rem;
 }
@@ -127,34 +129,34 @@ section {
 */
 
 
-.arrow{
+.arrow {
   display: inline;
-} 
+}
 
-.title-container{
+.title-container {
   padding: 1rem 0.8rem;
 }
 
-.choice-container{
+.choice-container {
   display: inline;
 }
 
-.start-title{
+.start-title {
   font-weight: bold;
 }
 
-.end-title{
+.end-title {
   font-weight: bold;
 }
 
 
-.button-container{
+.button-container {
   padding: 2rem 2rem 0.5rem 2rem;
   justify-content: space-around;
 }
 
 
-.now-location{
+.now-location {
   background-color: #C6EBC9;
   border-radius: 25px;
   display: flex;
@@ -164,13 +166,14 @@ section {
   justify-content: flex-start;
 }
 
-.current_icon{
+.current_icon {
   height: 30px;
   position: absolute;
   top: 10px;
   right: 10px;
 }
-.footer-container{
+
+.footer-container {
   display: flex;
   /* background-color: #4FB86E; */
   background-color: #ccc;
@@ -180,19 +183,20 @@ section {
   justify-content: space-around;
   align-items: center;
   margin-top: 3rem;
-  position: fixed; /*하단에 고정*/
+  position: fixed;
+  /*하단에 고정*/
   bottom: 0;
   z-index: 100;
 }
 
-.map{
-  padding : 2rem 0;
+.map {
+  padding: 2rem 0;
   height: 400px;
   width: 90%;
   margin: 0% 5%;
 }
 
-.choice-container{
+.choice-container {
   width: 100%;
 }
 
@@ -202,43 +206,51 @@ section {
 .bSection {
   margin: 30px auto;
 }
+
 /*===================================================================================*/
-#backtotop{
+#backtotop {
   background-color: #4FB86E;
   width: 40px;
   height: 40px;
   text-align: center;
 
-  border-radius: 20px;    /* 너비와 높이의 1/2 -> 원 형태 */
-  position: fixed;     /*fixed-> 문서의 흐름에서 벗어남 따라서 bottome30px, right30px위치에 나타남*/
+  border-radius: 20px;
+  /* 너비와 높이의 1/2 -> 원 형태 */
+  position: fixed;
+  /*fixed-> 문서의 흐름에서 벗어남 따라서 bottome30px, right30px위치에 나타남*/
   bottom: 30px;
   right: 30px;
   transition-property: background-color, opacity, visibility;
-  transition-duration: 0.3s, 0.5s,0.5s;
+  transition-duration: 0.3s, 0.5s, 0.5s;
   opacity: 0;
   visibility: hidden;
-  z-index: 999;   /* 위에 나타나도록 */
+  z-index: 999;
+  /* 위에 나타나도록 */
 }
 
-#backtotop::after { /*::after : 가상 요소 셀렉터*/
-  content: "\f077";  /*fontawesome에서 유니코드가 f077인 아이콘 사용 */
+#backtotop::after {
+  /*::after : 가상 요소 셀렉터*/
+  content: "\f077";
+  /*fontawesome에서 유니코드가 f077인 아이콘 사용 */
   font-family: FontAwesome;
   font-size: 1.5rem;
-  line-height: 40px; /* line-height == height -> 가운데 정렬 */
+  line-height: 40px;
+  /* line-height == height -> 가운데 정렬 */
   color: black;
   font-weight: bold;
 }
 
-#backtotop.show {  
+#backtotop.show {
   opacity: 1;
   visibility: visible;
   background-color: white;
 }
 
-#backtotop.show:hover{
-  cursor:pointer;
+#backtotop.show:hover {
+  cursor: pointer;
   background-color: #C6EBC9;
 }
+
 .box {
   display: block;
   width: 100%;
@@ -249,7 +261,7 @@ section {
   color: white;
 }
 
-#treeRoadView{
+#treeRoadView {
   position: absolute;
   color: white;
   padding: 10px 20px;
@@ -263,31 +275,7 @@ section {
 }
 
 
-#skyRoadView{
-  position: absolute;
-  color: white;
-  padding: 10px 20px;
-  top: 10px;
-  right: 30px;
-  font-size: 16px;
-  border-radius: 10px;
-  background-color: black;
-  opacity: 0.6;
-  display: none;
-}
-#quiteRoadView{
-  position: absolute;
-  color: white;
-  padding: 10px 20px;
-  top: 10px;
-  right: 30px;
-  font-size: 16px;
-  border-radius: 10px;
-  background-color: black;
-  opacity: 0.6;
-  display: none;
-}
-#safeRoadView{
+#skyRoadView {
   position: absolute;
   color: white;
   padding: 10px 20px;
@@ -300,10 +288,36 @@ section {
   display: none;
 }
 
+#quiteRoadView {
+  position: absolute;
+  color: white;
+  padding: 10px 20px;
+  top: 10px;
+  right: 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.6;
+  display: none;
+}
+
+#safeRoadView {
+  position: absolute;
+  color: white;
+  padding: 10px 20px;
+  top: 10px;
+  right: 30px;
+  font-size: 16px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.6;
+  display: none;
+}
 
 
 
-.box2{
+
+.box2 {
   display: flex;
   width: 45%;
   height: 300px;
@@ -312,14 +326,15 @@ section {
   position: relative;
   color: white;
   align-items: center;
-  
+
 }
 
-.collection{
+.collection {
   display: flex;
   padding: 2rem;
   justify-content: space-between;
 }
+
 .tree-option {
   background-image: url("../img/background/tree.jpg");
   background-size: cover;
@@ -328,28 +343,32 @@ section {
 .sky-option {
   background-image: url("../img/background/sky.avif");
   background-size: cover;
-}.quite-option {
-  background-image: url("../img/background/quite.avif");
-  transform: translateY(20px);
-  background-size: cover;
-}.safe-option {
-  background-image: url("../img/background/safety.avif");
-  transform: translateY(20px);
-  background-size: cover;
 }
 
-.first{
+.quite-option {
+  background-image: url("../img/background/quite.avif");
+  background-size: cover;
+  background-position-y: -35px;
+}
+
+.safe-option {
+  background-image: url("../img/background/safety.avif");
+  background-size: cover;
+  background-position-y: -35px;
+}
+
+.first {
   background-image: url("../img/background/tree.jpg");
   background-size: cover;
 }
 
-.second{
+.second {
   background-image: url("../img/background/tree.jpg");
   background-size: cover;
 }
 
 .filter {
-  margin:0;
+  margin: 0;
   left: 0px;
   top: 0px;
   position: absolute;
@@ -363,8 +382,9 @@ section {
   z-index: 99;
   color: white;
   font-size: 20px;
-  
+
 }
+
 /*===================================================================================*/
 
 @media (min-width: 768px) {
