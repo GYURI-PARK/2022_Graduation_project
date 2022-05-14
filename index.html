@@ -204,8 +204,8 @@
               console.log("spot1 : ", spot1);
               console.log("spot2 : ", spot2);
 
-              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]),
-                new kakao.maps.LatLng(spot2[1], spot2[0]));
+              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]));
+              lines.push(new kakao.maps.LatLng(spot2[1], spot2[0]));
             });
           }).catch(function (error) {
             console.log("에러 발생 : ", error);
@@ -229,8 +229,8 @@
           location.href = "sky.html?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
         }
 
-        function quiteRoad() {
-          location.href = "quite.html?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+        function quietRoad() {
+          location.href = "quiet.html?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
         }
 
         function safeRoad() {
@@ -261,8 +261,8 @@
               console.log("spot1 : ", spot1);
               console.log("spot2 : ", spot2);
 
-              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]),
-                new kakao.maps.LatLng(spot2[1], spot2[0]));
+              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]));
+              lines.push(new kakao.maps.LatLng(spot2[1], spot2[0]));
             });
           }).catch(function (error) {
             console.log("에러 발생 : ", error);
@@ -278,7 +278,7 @@
           })
         }
 
-        function quite() {
+        function quiet() {
 
           var lines = [];
           startLat = markers[0].getPosition().getLat();
@@ -288,7 +288,7 @@
           endLng = markers[1].getPosition().getLng();
 
 
-          var url = "http://localhost:3300/sky";
+          var url = "http://localhost:3300/quiet";
           var params = "?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
           reqUrl = url + params;
           console.log(reqUrl);
@@ -302,8 +302,8 @@
               console.log("spot1 : ", spot1);
               console.log("spot2 : ", spot2);
 
-              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]),
-                new kakao.maps.LatLng(spot2[1], spot2[0]));
+              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]));
+              lines.push(new kakao.maps.LatLng(spot2[1], spot2[0]));
             });
           }).catch(function (error) {
             console.log("에러 발생 : ", error);
@@ -329,7 +329,7 @@
           endLng = markers[1].getPosition().getLng();
 
 
-          var url = "http://localhost:3300/sky";
+          var url = "http://localhost:3300/safe";
           var params = "?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
           reqUrl = url + params;
           console.log(reqUrl);
@@ -343,8 +343,8 @@
               console.log("spot1 : ", spot1);
               console.log("spot2 : ", spot2);
 
-              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]),
-                new kakao.maps.LatLng(spot2[1], spot2[0]));
+              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]));
+              lines.push(new kakao.maps.LatLng(spot2[1], spot2[0]));
             });
           }).catch(function (error) {
             console.log("에러 발생 : ", error);
@@ -381,12 +381,12 @@
         $("#skyRoadView").css('display', 'none');
         console.log("out");
       });
-      $(".quite-option").mouseover(function () {
-        $("#quiteRoadView").css('display', 'block');
+      $(".quiet-option").mouseover(function () {
+        $("#quietRoadView").css('display', 'block');
         console.log("over");
       });
-      $(".quite-option").mouseout(function () {
-        $("#quiteRoadView").css('display', 'none');
+      $(".quiet-option").mouseout(function () {
+        $("#quietRoadView").css('display', 'none');
         console.log("out");
       });
       $(".safe-option").mouseover(function () {
@@ -416,10 +416,10 @@
             <div id="skyRoadView" onclick="skyRoad()"> 로드뷰 </div></div>
           
         </div>
-        <div class="quite-option box">
+        <div class="quiet-option box">
           <div class="filter box"></div>
-          <div class="top box" onclick="quite()">조용한 길
-            <div id="quiteRoadView" onclick="quiteRoad()"> 로드뷰 </div></div>
+          <div class="top box" onclick="quiet()">조용한 길
+            <div id="quietRoadView" onclick="quietRoad()"> 로드뷰 </div></div>
           
         </div>
         <div class="safe-option box">

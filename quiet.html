@@ -32,33 +32,15 @@
   <link rel="icon" href="img/homepage_icon/854929.png" />
   <link rel="apple-touch-icon" href="img/homepage_icon/854929.png" />
   <link rel="short icon" type="image/x-icon" href="img/homepage_icon/854929.png" />
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="css/nomalize.css" />
   <script src="https://kit.fontawesome.com/2075dc15a5.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css" />
   <link href="/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
 </head>
 
 <body>
-  <div id="customOverlay">
-    나무가 많은 길을 탐색중입니다.
-  </div>
-  <script>
-    var customElement = $("#customOverlay");
-    $.LoadingOverlay("show", {
-      image: "",
-      custom: customElement
-    });
-
-    // Hide it after 3 seconds
-    setTimeout(function () {
-      $.LoadingOverlay("hide");
-    }, 3000);
-  </script>
   <header>
     <div class="inner">
       <div class="head-container">
@@ -90,11 +72,11 @@
         var jsonEndLng = Number(JSON.stringify(data[3]).split('=')[1].substring(0, JSON.stringify(data[3]).split('=')[1].length - 1));
 
         // 'geolocation' in navigator
-        // if (1 == 0) {
-        //   alert("실시간 위치 정보 기능 사용 가능!");
-        // } else {
-        //   alert("실시간 위치 정보 기능 사용 불가능!");
-        // }
+        if (1 == 0) {
+          alert("실시간 위치 정보 기능 사용 가능!");
+        } else {
+          alert("실시간 위치 정보 기능 사용 불가능!");
+        }
 
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
           mapOption = {
@@ -139,7 +121,7 @@
 
         // polyline 그리기 ==================================
         var lines = [];
-        var url = "http://localhost:3300/tree";
+        var url = "http://localhost:3300/quiet";
         var params = "?startLat=" + jsonStartLat + "&startLng=" + jsonStartLng + "&endLat=" + jsonEndLat + "&endLng=" + jsonEndLng;
         reqUrl = url + params;
         console.log(reqUrl);
