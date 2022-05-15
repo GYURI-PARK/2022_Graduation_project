@@ -40,7 +40,10 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
     integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+  <!-- <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+  </style> -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -86,12 +89,6 @@
         src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7deddde33d25b480204f267a6f10971c&libraries=services"></script>
       <div id="clickLatlng"></div>
       <script>
-        // 'geolocation' in navigator
-        if (1 == 0) {
-          alert("실시간 위치 정보 기능 사용 가능!");
-        } else {
-          alert("실시간 위치 정보 기능 사용 불가능!");
-        }
 
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
           mapOption = {
@@ -213,7 +210,7 @@
             polyline = new kakao.maps.Polyline({
               path: lines, // 선을 구성하는 좌표배열 입니다
               strokeWeight: 5, // 선의 두께 입니다
-              strokeColor: '#FFAE00', // 선의 색깔입니다
+              strokeColor: '#58D40F', // 선의 색깔입니다
               strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
               strokeStyle: 'solid' // 선의 스타일입니다
             });
@@ -270,7 +267,7 @@
             polyline = new kakao.maps.Polyline({
               path: lines, // 선을 구성하는 좌표배열 입니다
               strokeWeight: 5, // 선의 두께 입니다
-              strokeColor: 'blue', // 선의 색깔입니다
+              strokeColor: '#1C68EB', // 선의 색깔입니다
               strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
               strokeStyle: 'solid' // 선의 스타일입니다
             });
@@ -311,7 +308,7 @@
             polyline = new kakao.maps.Polyline({
               path: lines, // 선을 구성하는 좌표배열 입니다
               strokeWeight: 5, // 선의 두께 입니다
-              strokeColor: 'grey', // 선의 색깔입니다
+              strokeColor: '#D62026', // 선의 색깔입니다
               strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
               strokeStyle: 'solid' // 선의 스타일입니다
             });
@@ -352,7 +349,7 @@
             polyline = new kakao.maps.Polyline({
               path: lines, // 선을 구성하는 좌표배열 입니다
               strokeWeight: 5, // 선의 두께 입니다
-              strokeColor: 'green', // 선의 색깔입니다
+              strokeColor: '#F7DB11', // 선의 색깔입니다
               strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
               strokeStyle: 'solid' // 선의 스타일입니다
             });
@@ -405,28 +402,32 @@
         <div class="tree-option box">
           <div class="filter box"></div>
           <div class="top box" onclick="tree()">나무가 많은 길
-            <div id="treeRoadView" onclick="treeRoad()">로드뷰 </div></div>
-          
-          
+            <div id="treeRoadView" onclick="treeRoad()">로드뷰 </div>
+          </div>
+
+
         </div>
 
         <div class="sky-option box">
           <div class="filter box"></div>
           <div class="top box" onclick="sky()">하늘이 잘 보이는 길
-            <div id="skyRoadView" onclick="skyRoad()"> 로드뷰 </div></div>
-          
+            <div id="skyRoadView" onclick="skyRoad()"> 로드뷰 </div>
+          </div>
+
         </div>
         <div class="quiet-option box">
           <div class="filter box"></div>
           <div class="top box" onclick="quiet()">조용한 길
-            <div id="quietRoadView" onclick="quietRoad()"> 로드뷰 </div></div>
-          
+            <div id="quietRoadView" onclick="quietRoad()"> 로드뷰 </div>
+          </div>
+
         </div>
         <div class="safe-option box">
           <div class="filter box"></div>
           <div class="top box" onclick="safe()">안전한 길
-            <div id="safeRoadView" onclick="safeRoad()"> 로드뷰 </div></div>
-          
+            <div id="safeRoadView" onclick="safeRoad()"> 로드뷰 </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -441,7 +442,9 @@
     <div class="footer-container">
       <img src="img/footer_icon/left_white.png" alt="point icon" height="30px">
       <img src="img/footer_icon/home.png" alt="home icon" height="30px">
-      <img src="img/footer_icon/person_white.png" alt="peron icon" height="30px">
+      <a href="./customized.html">
+        <img src="img/footer_icon/person_white.png" alt="peron icon" height="30px">
+      </a>
     </div>
   </footer>
   <a id="backtotop" class="show"></a>

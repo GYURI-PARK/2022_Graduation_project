@@ -38,19 +38,42 @@
   <link rel="stylesheet" href="css/style.css" />
   <link href="/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js">
+  </script>
 </head>
 
 <body>
+  <div id="customOverlay">
+    <h1>조용한 길</h1></br>을 탐색중입니다</br>
+    <h1>...</h1>
+  </div>
+  <script>
+    var customElement = $("#customOverlay");
+    $.LoadingOverlay("show", {
+      image: "",
+      custom: customElement
+    });
+
+    // Hide it after 3 seconds
+    setTimeout(function () {
+      $.LoadingOverlay("hide");
+    }, 3000);
+  </script>
   <header>
     <div class="inner">
       <div class="head-container">
         <div class="head-menu"> <a href="https://uos-urbanscience.org/search-portfolio">
             <img src="img/body_header/menu.png" alt="menu bar" height="30px"></a></div>
         <div class="head-appname"><a href="https://uos-urbanscience.org/search-portfolio"> WayFindeR </a></div>
-        <div class="head-portfolio"> <a href="https://uos-urbanscience.org/search-portfolio">
-            <img src="img/body_header/back.png" alt="go back icon" height="30px"></a></div>
+        <div class="head-portfolio">
+          <a href="./index.html">
+            <img src="img/body_header/back.png" alt="go back icon" height="30px">
+          </a>
+        </div>
       </div>
-    </div>
   </header>
 
   <section>
@@ -70,13 +93,6 @@
         var jsonStartLng = Number(JSON.stringify(data[1]).split('=')[1].substring(0, JSON.stringify(data[1]).split('=')[1].length - 1));
         var jsonEndLat = Number(JSON.stringify(data[2]).split('=')[1].substring(0, JSON.stringify(data[2]).split('=')[1].length - 1));
         var jsonEndLng = Number(JSON.stringify(data[3]).split('=')[1].substring(0, JSON.stringify(data[3]).split('=')[1].length - 1));
-
-        // 'geolocation' in navigator
-        if (1 == 0) {
-          alert("실시간 위치 정보 기능 사용 가능!");
-        } else {
-          alert("실시간 위치 정보 기능 사용 불가능!");
-        }
 
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
           mapOption = {
@@ -144,7 +160,7 @@
           polyline = new kakao.maps.Polyline({
             path: lines, // 선을 구성하는 좌표배열 입니다
             strokeWeight: 5, // 선의 두께 입니다
-            strokeColor: 'green', // 선의 색깔입니다
+            strokeColor: '#D62121', // 선의 색깔입니다
             strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
             strokeStyle: 'solid' // 선의 스타일입니다
           });
