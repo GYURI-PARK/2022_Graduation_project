@@ -1,89 +1,480 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="ko">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.8.1/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.8.1/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.8.1/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.8.1/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.8.1/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.8.1/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.8.1/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.8.1/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.8.1/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.8.1/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>WayFindeR</title>
+  <meta name="description" content="보행자 맞춤형 길찾기 서비스" />
+  <meta name="keywords" content="길찾기, 길안내" />
+  <meta name="author" content="GYURI PARK" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, 
+    maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="보행자 맞춤형 길찾기 서비스" />
+  <meta property="og:description" content="쾌적성과 안전성 기반의 길안내" />
+  <meta property="og:image" content="미리보기 이미지" />
+  <!--나중에 입력 -->
+  <meta property="og:url" content="홈페이지url" />
+  <!--나중에 입력!!!!-->
+  <meta property="og:site_name" content="UOS_2022_졸업작품" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="보행자 맞춤형 길찾기 서비스" />
+  <meta name="twitter:description" content="쾌적성과 안전성 기반의 길안내" />
+  <meta name="twitter:image" content="미리보기 이미지" />
+  <!--나중에 입력!!!!-->
+  <meta name="twitter:url" content="홈페이지url" />
+  <!--나중에 입력!!!!-->
+  <meta name="twitter:creator" content="GYURI PARK" />
+
+  <link rel="icon" href="img/homepage_icon/854929.png" />
+  <link rel="apple-touch-icon" href="img/homepage_icon/854929.png" />
+  <link rel="short icon" type="image/x-icon" href="img/homepage_icon/854929.png" />
+
+  <link rel="stylesheet" href="css/nomalize.css" />
+  <script src="https://kit.fontawesome.com/2075dc15a5.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+    integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  <!-- <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap');
+  </style> -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+  <!-- <base href="https://graduationproject-2a494.firebaseapp.com">
+  <script type="text/javascript" src="https://graduationproject-2a494.firebaseapp.com/runtime.a66f828dca56eeb90e02.js"></script> -->
+
+</head>
+
+<body>
+  <header>
+    <div class="inner">
+      <div class="head-container">
+        <div class="head-menu"> <a href="https://uos-urbanscience.org/search-portfolio">
+            <img src="img/body_header/menu.png" alt="menu bar" height="30px"></a></div>
+        <div class="head-appname"><a href="https://uos-urbanscience.org/search-portfolio"> WayFindeR </a></div>
+        <div class="head-portfolio"> <a href="https://uos-urbanscience.org/search-portfolio">
+            <i class="fas fa-solid fa-globe globe"></i>
+          </a></div>
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </header>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+
+  <section>
+    <!-- <div class="inner">-->
+    <div class="loca-container">
+      <div class="choice-container">
+        <div class="start-container">
+          <img class="current_icon" src="img/nowloca.png" onclick="geo()">
+          <input id='start_point' placeholder='출발 장소' />
+        </div>
+
+        <div class="end-container">
+          <input id='end-point' placeholder='도착 장소' />
+
+        </div>
+      </div>
+
+    </div>
+    <!--  </div> -->
+  </section>
+
+
+  <section>
+    <div class="map">
+      <div id="map" style="width:100%; height:400px;"></div>
+      <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7deddde33d25b480204f267a6f10971c&libraries=services"></script>
+      <div id="clickLatlng"></div>
+      <script>
+
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+          mapOption = {
+            center: new kakao.maps.LatLng(37.5644783, 126.9220027), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+          };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        var markers = [];
+        index = 0;
+        // 지도를 클릭한 위치에 표출할 마커입니다
+        var sMarker = new kakao.maps.Marker({
+          // 지도 중심좌표에 마커를 생성합니다 
+          position: map.getCenter()
+        });
+        var eMarker = new kakao.maps.Marker({
+          position: map.getCenter()
+        })
+        markers.push(sMarker);
+        markers.push(eMarker);
+
+
+        // 지도에 클릭 이벤트를 등록합니다
+        // 지도를 클릭하면 마지막 파라미터로 넘어온 함수를 호출합니다
+        kakao.maps.event.addListener(map, 'click', function (mouseEvent) {
+
+          // 클릭한 위도, 경도 정보를 가져옵니다 
+          var latlng = mouseEvent.latLng;
+          console.log("latlng -> ", latlng);
+          // 마커 위치를 클릭한 위치로 옮깁니다
+          if (index == 0) {
+            markers[0].setPosition(latlng);
+            markers[0].setMap(map);
+            index++;
+
+            //
+            // 주소-좌표 변환 객체를 생성합니다
+            var geocoder = new kakao.maps.services.Geocoder();
+            var coord = new kakao.maps.LatLng(latlng.getLat(), latlng.getLng());
+            var callback = function (result, status) {
+              if (status === kakao.maps.services.Status.OK) {
+                var loc = result[0].address.address_name;
+                document.getElementById('start_point').value = loc;
+              }
+            };
+            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+
+          }
+          else if (index == 1) {
+            markers[1].setPosition(latlng);
+            markers[1].setMap(map);
+            index++;
+            //
+            // 주소-좌표 변환 객체를 생성합니다
+            var geocoder = new kakao.maps.services.Geocoder();
+            var coord = new kakao.maps.LatLng(latlng.getLat(), latlng.getLng());
+            var callback = function (result, status) {
+              if (status === kakao.maps.services.Status.OK) {
+                var loc = result[0].address.address_name;
+                console.log(loc);
+                document.getElementById('end-point').value = loc;
+              }
+            };
+            geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
+          } else {
+            markers.forEach(marker => {
+              marker.setMap(null);
+            });
+            document.getElementById('start_point').value = "";
+            document.getElementById('end-point').value = "";
+            index = 0;
+          }
+        });
+
+        function geo() {
+          navigator.geolocation.getCurrentPosition((position) => {
+            var tmp = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            map.setCenter(tmp);
+          })
         }
+        var polyline = new kakao.maps.Polyline({
+          path: [], // 선을 구성하는 좌표배열 입니다
+          strokeWeight: 5, // 선의 두께 입니다
+          strokeColor: '#FFAE00', // 선의 색깔입니다
+          strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+          strokeStyle: 'solid' // 선의 스타일입니다
+        });
+
+
+        function tree() {
+          var lines = [];
+          startLat = markers[0].getPosition().getLat();
+          startLng = markers[0].getPosition().getLng();
+
+          endLat = markers[1].getPosition().getLat();
+          endLng = markers[1].getPosition().getLng();
+
+
+          var url = "http://localhost:3300/tree";
+          var params = "?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+          reqUrl = url + params;
+          console.log(reqUrl);
+
+          axios.get(reqUrl).then(function (result) {
+            console.log(result);
+            result.data.map((item) => {
+              line = item["link_wtk"];
+              var spot1 = line.split("(")[1].split(")")[0].split(",")[0].split(" ");
+              var spot2 = line.split("(")[1].split(")")[0].split(",")[1].split(" ");
+              console.log("spot1 : ", spot1);
+              console.log("spot2 : ", spot2);
+
+              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]));
+              lines.push(new kakao.maps.LatLng(spot2[1], spot2[0]));
+            });
+          }).catch(function (error) {
+            console.log("에러 발생 : ", error);
+          }).then(() => {
+            polyline = new kakao.maps.Polyline({
+              path: lines, // 선을 구성하는 좌표배열 입니다
+              strokeWeight: 5, // 선의 두께 입니다
+              strokeColor: '#58D40F', // 선의 색깔입니다
+              strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+              strokeStyle: 'solid' // 선의 스타일입니다
+            });
+            polyline.setMap(map);
+          })
+        }
+
+        function treeRoad() {
+          location.href = "tree.html?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+        }
+
+        function skyRoad() {
+          location.href = "sky.html?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+        }
+
+        function quietRoad() {
+          location.href = "quiet.html?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+        }
+
+        function safeRoad() {
+          location.href = "safe.html?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+        }
+
+        function sky() {
+
+          var lines = [];
+          startLat = markers[0].getPosition().getLat();
+          startLng = markers[0].getPosition().getLng();
+
+          endLat = markers[1].getPosition().getLat();
+          endLng = markers[1].getPosition().getLng();
+
+
+          var url = "http://localhost:3300/sky";
+          var params = "?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+          reqUrl = url + params;
+          console.log(reqUrl);
+
+          axios.get(reqUrl).then(function (result) {
+            console.log(result);
+            result.data.map((item) => {
+              line = item["link_wtk"];
+              var spot1 = line.split("(")[1].split(")")[0].split(",")[0].split(" ");
+              var spot2 = line.split("(")[1].split(")")[0].split(",")[1].split(" ");
+              console.log("spot1 : ", spot1);
+              console.log("spot2 : ", spot2);
+
+              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]));
+              lines.push(new kakao.maps.LatLng(spot2[1], spot2[0]));
+            });
+          }).catch(function (error) {
+            console.log("에러 발생 : ", error);
+          }).then(() => {
+            polyline = new kakao.maps.Polyline({
+              path: lines, // 선을 구성하는 좌표배열 입니다
+              strokeWeight: 5, // 선의 두께 입니다
+              strokeColor: '#1C68EB', // 선의 색깔입니다
+              strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+              strokeStyle: 'solid' // 선의 스타일입니다
+            });
+            polyline.setMap(map);
+          })
+        }
+
+        function quiet() {
+
+          var lines = [];
+          startLat = markers[0].getPosition().getLat();
+          startLng = markers[0].getPosition().getLng();
+
+          endLat = markers[1].getPosition().getLat();
+          endLng = markers[1].getPosition().getLng();
+
+
+          var url = "http://localhost:3300/quiet";
+          var params = "?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+          reqUrl = url + params;
+          console.log(reqUrl);
+
+          axios.get(reqUrl).then(function (result) {
+            console.log(result);
+            result.data.map((item) => {
+              line = item["link_wtk"];
+              var spot1 = line.split("(")[1].split(")")[0].split(",")[0].split(" ");
+              var spot2 = line.split("(")[1].split(")")[0].split(",")[1].split(" ");
+              console.log("spot1 : ", spot1);
+              console.log("spot2 : ", spot2);
+
+              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]));
+              lines.push(new kakao.maps.LatLng(spot2[1], spot2[0]));
+            });
+          }).catch(function (error) {
+            console.log("에러 발생 : ", error);
+          }).then(() => {
+            polyline = new kakao.maps.Polyline({
+              path: lines, // 선을 구성하는 좌표배열 입니다
+              strokeWeight: 5, // 선의 두께 입니다
+              strokeColor: '#D62026', // 선의 색깔입니다
+              strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+              strokeStyle: 'solid' // 선의 스타일입니다
+            });
+            polyline.setMap(map);
+          })
+        }
+
+        function safe() {
+
+          var lines = [];
+          startLat = markers[0].getPosition().getLat();
+          startLng = markers[0].getPosition().getLng();
+
+          endLat = markers[1].getPosition().getLat();
+          endLng = markers[1].getPosition().getLng();
+
+
+          var url = "http://localhost:3300/safe";
+          var params = "?startLat=" + startLat + "&startLng=" + startLng + "&endLat=" + endLat + "&endLng=" + endLng;
+          reqUrl = url + params;
+          console.log(reqUrl);
+
+          axios.get(reqUrl).then(function (result) {
+            console.log(result);
+            result.data.map((item) => {
+              line = item["link_wtk"];
+              var spot1 = line.split("(")[1].split(")")[0].split(",")[0].split(" ");
+              var spot2 = line.split("(")[1].split(")")[0].split(",")[1].split(" ");
+              console.log("spot1 : ", spot1);
+              console.log("spot2 : ", spot2);
+
+              lines.push(new kakao.maps.LatLng(spot1[1], spot1[0]));
+              lines.push(new kakao.maps.LatLng(spot2[1], spot2[0]));
+            });
+          }).catch(function (error) {
+            console.log("에러 발생 : ", error);
+          }).then(() => {
+            polyline = new kakao.maps.Polyline({
+              path: lines, // 선을 구성하는 좌표배열 입니다
+              strokeWeight: 5, // 선의 두께 입니다
+              strokeColor: '#F7DB11', // 선의 색깔입니다
+              strokeOpacity: 0.7, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+              strokeStyle: 'solid' // 선의 스타일입니다
+            });
+            polyline.setMap(map);
+          })
+        }
+      </script>
+  </section>
+
+
+  <script>
+    $(document).ready(function () {
+      $(".tree-option").mouseover(function () {
+        $("#treeRoadView").css('display', 'block');
+        console.log("over");
       });
-    </script>
-  </body>
+      $(".tree-option").mouseout(function () {
+        $("#treeRoadView").css('display', 'none');
+        console.log("out");
+      });
+      $(".sky-option").mouseover(function () {
+        $("#skyRoadView").css('display', 'block');
+        console.log("over");
+      });
+      $(".sky-option").mouseout(function () {
+        $("#skyRoadView").css('display', 'none');
+        console.log("out");
+      });
+      $(".quiet-option").mouseover(function () {
+        $("#quietRoadView").css('display', 'block');
+        console.log("over");
+      });
+      $(".quiet-option").mouseout(function () {
+        $("#quietRoadView").css('display', 'none');
+        console.log("out");
+      });
+      $(".safe-option").mouseover(function () {
+        $("#safeRoadView").css('display', 'block');
+        console.log("over");
+      });
+      $(".safe-option").mouseout(function () {
+        $("#safeRoadView").css('display', 'none');
+        console.log("out");
+      });
+    })
+  </script>
+  <section>
+    <div class="inner bSection">
+      <div class="choice-container">
+        <div class="tree-option box">
+          <div class="filter box"></div>
+          <div class="top box" onclick="tree()">나무가 많은 길
+            <div id="treeRoadView" onclick="treeRoad()">로드뷰 </div>
+          </div>
+
+
+        </div>
+
+        <div class="sky-option box">
+          <div class="filter box"></div>
+          <div class="top box" onclick="sky()">하늘이 잘 보이는 길
+            <div id="skyRoadView" onclick="skyRoad()"> 로드뷰 </div>
+          </div>
+
+        </div>
+        <div class="quiet-option box">
+          <div class="filter box"></div>
+          <div class="top box" onclick="quiet()">조용한 길
+            <div id="quietRoadView" onclick="quietRoad()"> 로드뷰 </div>
+          </div>
+
+        </div>
+        <div class="safe-option box">
+          <div class="filter box"></div>
+          <div class="top box" onclick="safe()">안전한 길
+            <div id="safeRoadView" onclick="safeRoad()"> 로드뷰 </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </script>
+  </div>
+  </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <img src="img/footer_icon/left_white.png" alt="point icon" height="30px">
+      <img src="img/footer_icon/home.png" alt="home icon" height="30px">
+      <a href="./customized.html">
+        <img src="img/footer_icon/person_white.png" alt="peron icon" height="30px">
+      </a>
+    </div>
+  </footer>
+  <a id="backtotop" class="show"></a>
+  <script src="js/main.js"></script>
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCMwlmRm6StMPFp_frv2OlvSeKabFi_j8U",
+    authDomain: "graduationproject-2a494.firebaseapp.com",
+    projectId: "graduationproject-2a494",
+    storageBucket: "graduationproject-2a494.appspot.com",
+    messagingSenderId: "1089073720465",
+    appId: "1:1089073720465:web:178701c5dbbaccbe54a330",
+    measurementId: "G-NWXLDL2CQQ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+
 </html>
