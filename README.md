@@ -13,4 +13,8 @@
 >
 > 그래서 WayFindeR는 시작했습니다.단순히 빨리 갈 수 있는 길이 아닌 **안전하고, 쾌적한 보행자 맞춤형 길찾기 서비스** 입니다.
 
-image.png
+image.png 여기에 사진 올리기
+
+
+## 📚 Stacks
+<img src="https://img.shields.io/badge/JavaScript-#F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black">
