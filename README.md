@@ -1,11 +1,11 @@
-<figure class="third">
+<div class=pull-left>
     ![로고2](https://user-images.githubusercontent.com/93391058/196037376-0bd64cd0-985d-4cca-87e7-3db8a7f6380c.png){: width="25" height="25"} 
+</div>
+
+<div class=pull-right>
     # 당신이 원하는 길로 이끄는 지도, WayFindeR🏃‍♀️
-    
-</figure>
-
-#### 2022 서울시립대학교 공간정보공학과 졸업작품
-
+    #### 2022 서울시립대학교 공간정보공학과 졸업작품
+</div>
 
 ## 👀 Preview
 > “여러분은 목적지까지의 길을 찾을 때 어떻게 하시나요?”
