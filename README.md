@@ -1,4 +1,4 @@
-![로고2](https://user-images.githubusercontent.com/93391058/196096612-d7686e51-01db-43c1-bad1-8b4f399e0401.png) {: width="100" height="100"}
+![로고2](https://user-images.githubusercontent.com/93391058/196096612-d7686e51-01db-43c1-bad1-8b4f399e0401.png){: width="100" height="100"}
 
 
 # 당신이 원하는 길로 이끄는 지도, WayFindeR🏃‍♀️
