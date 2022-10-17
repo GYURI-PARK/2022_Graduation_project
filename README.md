@@ -1,4 +1,5 @@
-<img src=![로고2](https://user-images.githubusercontent.com/93391058/196038818-e0d08fa0-cd1c-4f98-98e7-422482a52ade.png) width="100" height="100"/>
+<img src="![로고2](https://user-images.githubusercontent.com/93391058/196096612-d7686e51-01db-43c1-bad1-8b4f399e0401.png)
+" width="100" height="100"/>
 
 # 당신이 원하는 길로 이끄는 지도, WayFindeR🏃‍♀️
 #### 2022 서울시립대학교 공간정보공학과 졸업작품
