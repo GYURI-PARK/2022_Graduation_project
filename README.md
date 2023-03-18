@@ -2,6 +2,7 @@
 
 # 당신이 원하는 길로 이끄는 지도, WayFindeR🏃‍♀️
 #### 2022 서울시립대학교 공간정보공학과 졸업작품
+[아카이브](https://uos-urbanscience.org/archives/uos_portfolio/당신이-원하는-길로-이끄는-지도-wayfinder)
 
 
 ## 👀 Preview
